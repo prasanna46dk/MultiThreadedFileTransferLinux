@@ -7,4 +7,4 @@ server:
 client:
 	$(CC) $(CFLAG) client.c -o client
 clean:
-	rm server client 	
+	rm server client
