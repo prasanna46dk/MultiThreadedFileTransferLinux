@@ -6,7 +6,8 @@
 #include <netinet/in.h>
 #include <string.h>
 #define PORT 8080
-int main(int argc, char const *argv[])
+
+int server()
 {
     int server_fd, new_socket, valread;
     struct sockaddr_in address;
@@ -56,4 +57,9 @@ int main(int argc, char const *argv[])
     close(new_socket);
     printf("Hello message sent\n");
     return 0;
+}
+
+int main(int argc, char *argv[])
+{
+    int ret = server();
 }
