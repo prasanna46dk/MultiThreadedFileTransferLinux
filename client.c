@@ -6,14 +6,14 @@
 #include <string.h>
 #define PORT 8080
 
-int main(int argc, char const *argv[])
+int client(const char *fileList)
 {
     struct sockaddr_in address;
     int sock = 0, valread;
     struct sockaddr_in serv_addr;
     char *hello = "Hello from client";
     char buffer[1024] = {'\0'};
-    int fd = open(argv[1],O_RDONLY);
+    int fd = open(fileList,O_RDONLY);
     if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0)
     {
         printf("\n Socket creation error \n");
@@ -42,5 +42,11 @@ int main(int argc, char const *argv[])
          printf("Hello message sent\n");
     }
     close(fd);
+    return 0;
+}
+
+int main (int argc, char *argv[])
+{
+    int ret = client (argv[1]);
     return 0;
 }
