@@ -25,7 +25,8 @@ run_client() {
     $EXE_PATH/client $EXE_PATH/Makefile 
 }
 
-clean
+clean || echo "Removed server client"
 build
 run_server
+sleep 2
 run_client
