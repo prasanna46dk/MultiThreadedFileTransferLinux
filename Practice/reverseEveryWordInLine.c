@@ -2,24 +2,15 @@
 #include<stdlib.h>
 #include<string.h>
 
+/* Given string reverse each word of the string
+ * INPUT: How are You?
+ * OUTPUT: woH era ?uoY
+ */
+
 char *reverseString(char *str)
 {
-    int i = 0, start = 0, end = 0;
-    //while(str[i] != '\0') {
-    //    while(str[i] != ' ' && str[i] != '\0')
-    //        i++;
-    //    end = i-1;
-    //    while(start < end) {
-    //        str[start] ^= str[end];
-    //        str[end] ^= str[start];
-    //        str[start++] ^= str[end--];
-    //    }
-    //    if (str[i] != '\0')
-    //    {
-    //        start = i+1;
-    //        i++;
-    //    }
-    for(i=0, start=0; str[i]!='\0'; i++, start = i) {
+    int i, start, end;
+    for(i=0, start=0; str[i]!='\0'; i++, start=i) {
         while(str[i] != ' ' && str[i] != '\0')
             i++;
         end = i-1;
@@ -46,3 +37,17 @@ int main(int argc, char *argv[])
     free(str);
     return 0;
 }
+/*while(str[i] != '\0') {
+    while(str[i] != ' ' && str[i] != '\0')
+        i++;
+    end = i-1;
+    while(start < end) {
+        str[start] ^= str[end];
+        str[end] ^= str[start];
+        str[start++] ^= str[end--];
+    }
+    if (str[i] != '\0')
+    {
+        start = i+1;
+        i++;
+    }*/

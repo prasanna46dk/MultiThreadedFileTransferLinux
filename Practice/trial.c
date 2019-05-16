@@ -1,8 +1,7 @@
 #include<stdio.h>
+#include<stdlib.h>
 int main(){
-    int a = 2, b = 5;
-    a ^=b;
-    b ^= a;
-    a ^= b;
-    printf("%d, %d\n",a,b);
+    char *b = (char*)malloc(sizeof(char)*2);
+    *b = 7;
+    printf("%d", sizeof(*b));
 }
