@@ -23,7 +23,10 @@ string maxOccuringChar (string str)
        itr != letterCount.end();
        itr++) {
     if (max <= (*itr))
-      maxChar = to_string(distance(letterCount.begin(), itr));
+      {
+	maxChar = 'A' + distance(letterCount.begin(), itr);
+	max = *itr;
+      }
   }
   return maxChar;
 }
